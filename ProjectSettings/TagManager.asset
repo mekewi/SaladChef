@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: PlayGround
+    uniqueID: 3176577427
+    locked: 0
+  - name: Text
+    uniqueID: 3062666469
+    locked: 0
