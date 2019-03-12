@@ -11,8 +11,8 @@ public class InputHandler : MonoBehaviour
 
     Rigidbody2D playerBody;
     //Player  Movement Buttons
-    private Command buttonW, buttonS, buttonA, buttonD;
-    private Command buttonI, buttonK, buttonJ, buttonL;
+    private Command buttonW, buttonS, buttonA, buttonD, buttonQ;
+    private Command buttonI, buttonK, buttonJ, buttonL, buttonU;
 
     void Start()
     {
@@ -21,11 +21,13 @@ public class InputHandler : MonoBehaviour
         buttonS = new MovingCommand(playerBlue.PlayerObject, playerBlue.Speed, MovingDirction.Down);
         buttonA = new MovingCommand(playerBlue.PlayerObject, playerBlue.Speed, MovingDirction.Left);
         buttonD = new MovingCommand(playerBlue.PlayerObject, playerBlue.Speed, MovingDirction.Right);
+        buttonQ = new PickupCommand(playerBlue.PlayerObject);
 
         buttonI = new MovingCommand(playerRed.PlayerObject, playerRed.Speed, MovingDirction.Up);
         buttonK = new MovingCommand(playerRed.PlayerObject, playerRed.Speed, MovingDirction.Down);
         buttonJ = new MovingCommand(playerRed.PlayerObject, playerRed.Speed, MovingDirction.Left);
         buttonL = new MovingCommand(playerRed.PlayerObject, playerRed.Speed, MovingDirction.Right);
+        buttonU = new PickupCommand(playerRed.PlayerObject);
 
 
     }
@@ -67,6 +69,15 @@ public class InputHandler : MonoBehaviour
             buttonW.StopExecuting();
         }
 
+        if (Input.GetKey(KeyCode.Q))
+        {
+            buttonQ.Execute();
+        }
+        else if (Input.GetKeyUp(KeyCode.Q))
+        {
+            buttonQ.StopExecuting();
+        }
+
 
 
         if (Input.GetKey(KeyCode.J))
@@ -104,5 +115,15 @@ public class InputHandler : MonoBehaviour
         {
             buttonI.StopExecuting();
         }
+
+        if (Input.GetKey(KeyCode.U))
+        {
+            buttonU.Execute();
+        }
+        else if (Input.GetKeyUp(KeyCode.U))
+        {
+            buttonU.StopExecuting();
+        }
+
     }
 }
