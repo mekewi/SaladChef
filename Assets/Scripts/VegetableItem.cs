@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+public enum RaycastDirction
+{
+    Up, Down, Left, Right
+}
+
 public class VegetableItem : Item
 {
 
@@ -10,7 +15,7 @@ public class VegetableItem : Item
     [SerializeField]
     GameManagerSO gameManagerData;
     [SerializeField]
-    MovingDirction rayCastDirction;
+    RaycastDirction rayCastDirction;
     public TextMeshPro ItemNameText;
 
     // Start is called before the first frame update
@@ -42,13 +47,13 @@ public class VegetableItem : Item
     private Vector2 GetDirction() {
         switch (rayCastDirction)
         {
-            case MovingDirction.Up:
+            case RaycastDirction.Up:
                 return Vector2.up;
-            case MovingDirction.Down:
+            case RaycastDirction.Down:
                 return Vector2.down;
-            case MovingDirction.Left:
+            case RaycastDirction.Left:
                 return Vector2.left;
-            case MovingDirction.Right:
+            case RaycastDirction.Right:
                 return Vector2.right;
             default:
                 return Vector2.left;
