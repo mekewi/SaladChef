@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: PlayerRed
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSP
-  PlayerTransform: {fileID: 0}
+  PlayerObject: {fileID: 0}
   Speed:
     UseConstant: 0
     ConstantValue: 30
     Variable: {fileID: 11400000, guid: 44b5b0bb9e0ea4ce3a9939e9753b4e8d, type: 2}
+  MaxPickedItem: 2
+  PickedItems: []
